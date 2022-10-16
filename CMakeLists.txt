@@ -21,7 +21,7 @@ if(WIN32)
     COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:sqlite> ${CMAKE_BINARY_DIR}/sqlite3.exe
     DEPENDS sqlite
   )
-  install(FILES sqlite3.exe DESTINATION bin)
+  install(FILES ${CMAKE_BINARY_DIR}/sqlite3.exe DESTINATION bin)
 else()
   include(FindThreads)
   target_link_libraries(sqlite m ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
